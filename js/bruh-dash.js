@@ -3,18 +3,18 @@ var global = window || GLOBAL;
 global.bruhdash = {
 
   // returns the first element of an array
-  first: function () {
-      
+  first: function (array) {
+    return array[0];
   },
 
   // returns the last element of an array
-  last: function () {
-
+  last: function (array) {
+    return array[array.length-1];
   },
 
   // returns the index of the first matching element from left to right
-  indexOf: function () {
-
+  indexOf: function (array) {
+    return;
   },
 
   // returns the index of the first matching element from left to right
