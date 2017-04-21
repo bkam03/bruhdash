@@ -13,8 +13,19 @@ global.bruhdash = {
   },
 
   // returns the index of the first matching element from left to right
-  indexOf: function (array) {
-    return;
+  indexOf: function (array, element) {
+    //go through each element in array
+    console.log(element);
+    for(var i = 0; i<array.length;i++) {
+    //look if there are copies in the array
+      var currentIndex = array.indexOf(element); 
+      console.log(currentIndex);
+    //if there is, return index of this element
+      if( currentIndex !== -1) {
+        return currentIndex;
+      }
+    }
+    return -1;
   },
 
   // returns the index of the first matching element from left to right
@@ -23,18 +34,18 @@ global.bruhdash = {
   },
 
   // returns an array with all elements except for the last element
-  initial: function () {
-
+  initial: function (array) {
+    array.pop();
+    return array;
   },
   
   // returns an array with all falsey values removed
-  compact: function() {
-
+  compact: function(array) {
   },
 
   // creates a slice of an array from the start index up to but not including the end index
   slice: function () {
-
+    return;
   },
 
   // returns a slice of array with n elements dropped from the beignning
