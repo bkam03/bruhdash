@@ -15,11 +15,11 @@ global.bruhdash = {
   // returns the index of the first matching element from left to right
   indexOf: function (array, element) {
     //go through each element in array
-    console.log(element);
+    //console.log(element);
     for(var i = 0; i<array.length;i++) {
     //look if there are copies in the array
       var currentIndex = array.indexOf(element); 
-      console.log(currentIndex);
+      //console.log(currentIndex);
     //if there is, return index of this element
       if( currentIndex !== -1) {
         return currentIndex;
@@ -28,9 +28,17 @@ global.bruhdash = {
     return -1;
   },
 
-  // returns the index of the first matching element from left to right
-  lastIndexof: function () {
-
+  // returns the index of the first matching element from right to left
+  lastIndexOf: function (array,element) {
+    //loop through array
+    for(var i = 0; i < array.length; i++) {
+      //check if element exists in array
+      var currentIndex = array.lastIndexOf(element);
+      if(currentIndex !== -1) {
+        return currentIndex;
+      }
+    }
+    return -1;
   },
 
   // returns an array with all elements except for the last element
