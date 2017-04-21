@@ -90,8 +90,12 @@ global.bruhdash = {
   },
 
   // creates a slice of an array with n elements taken from the beginning
-  take: function () {
-
+  take: function (array, elements) {
+    console.log(arguments);
+    if(elements == undefined) {
+      elements = 1;
+    }
+    return array.slice(0,elements);
   },
 
   // creates a slice of an array with n elements taken from the end
