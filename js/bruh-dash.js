@@ -176,13 +176,28 @@ global.bruhdash = {
    *******************/ 
 
   // creates an array of grouped elements
-  zip: function () {
-
+  zip: function (arr1, arr2) {
+    console.log(arguments);
+    var zipArray = [];
+    if(arr1.length === arr2.length) {
+      for(var i = 0; i < arr1.length;i++) {
+        zipArray.push([arr1[i],arr2[i]]);
+      }
+      return zipArray;
+    } else {
+      return null;
+    }
   },
 
   // creates an array of grouped elements in their pre-zip configuration
-  unzip: function () {
-
+  unzip: function (zipArray) {
+    var array = [ [],[] ];
+    zipArray.forEach(unzip);
+    function unzip(value) {
+      array[0].push(value[0]);
+      array[1].push(value[1]);
+    }
+    return array;
   },
 
   // creates an array of elements into groups of length of specified size
