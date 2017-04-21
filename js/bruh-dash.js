@@ -51,22 +51,27 @@ global.bruhdash = {
   compact: function(array) {
     console.log(array);
     function falsey(value) {
-      if(isNaN(value) || value == null || value == 0) {
+      if((isNaN(value)) || (value == null) || (value == 0)) {
         return false;
-      }
+      } else {
       return true;
+      }
     }
     return array.filter(falsey);
   },
 
   // creates a slice of an array from the start index up to but not including the end index
-  slice: function () {
-    return;
+  slice: function (array, start, end) {
+    console.log(arguments);
+    return array.slice(start,end);
   },
 
   // returns a slice of array with n elements dropped from the beignning
-  drop: function(){
-
+  drop: function(array, n){
+    if (n === undefined) {
+      n = 1;
+    }
+    return (array.slice(n));
   },
 
   // returns a slice of array with n elements dropped from the end
