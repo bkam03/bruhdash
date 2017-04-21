@@ -75,8 +75,18 @@ global.bruhdash = {
   },
 
   // returns a slice of array with n elements dropped from the end
-  dropRight: function() {
+  dropRight: function(array, n) {
+    //if n is unspecified, drop last element
+    console.log(array,n);
+    if(n === undefined) {
+      console.log("undefined");
+      n = 1;
+    }
+    //if n is 0, return whole array
+    var endNum = array.length - n;
+    console.log(array[endNum]);
 
+    return array.slice(0,endNum);
   },
 
   // creates a slice of an array with n elements taken from the beginning
