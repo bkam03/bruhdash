@@ -49,6 +49,14 @@ global.bruhdash = {
   
   // returns an array with all falsey values removed
   compact: function(array) {
+    console.log(array);
+    function falsey(value) {
+      if(isNaN(value) || value == null || value == 0) {
+        return false;
+      }
+      return true;
+    }
+    return array.filter(falsey);
   },
 
   // creates a slice of an array from the start index up to but not including the end index
