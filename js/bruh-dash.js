@@ -146,13 +146,29 @@ global.bruhdash = {
   },
 
   // creates an array excluding all the specified values
-  without: function() {
-
+  without: function(array, banArray) {
+    //console.log(arguments);
+    function filtering (value) {
+      if(this.indexOf(value) === -1) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return array.filter(filtering, banArray);
   },
 
   // returns an array with specified values excluded
-  difference: function() {
-
+  difference: function(arr1, arr2) {
+    console.log(arguments);
+    function filtering(value) {
+      if(this.indexOf(value) === -1) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return arr1.filter(filtering,arr2);
   },
 
   /*******************
