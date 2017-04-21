@@ -110,19 +110,38 @@ global.bruhdash = {
   // fills elements of array with specified value from the start index
   // up to but not including the end index
   fill: function(array, filling,start,end) {
-    console.log(arguments);
+    //console.log(arguments);
     start = start || 0;
     end = end || array.length;
     return array.fill(filling,start,end);
   },
 
   // removes all given values from an array
-  pull: function () {
+  pull: function (array, pullArray) {
+    //console.log(arguments);
 
+    function pulling(value) {
+      if(this.indexOf(value) === -1) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return array.filter(pulling, pullArray);
   },
 
   // removes elements of an array corresponding to the given indices
-  pullAt: function () {
+  pullAt: function (array, pullArray) {
+    //console.log(arguments);
+    //mark items to be removed with fill char.    
+    for(var i = 0; i < pullArray.length;i++) { 
+      array[pullArray[i]] = "XXX";
+    }
+    console.log(array);
+    //copy nonfill characters to new array and return
+  
+    var newArray = array.filter(function(x) { return x !== "XXX"});
+    return newArray;
 
   },
 
