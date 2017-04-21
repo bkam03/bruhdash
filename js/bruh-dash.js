@@ -84,14 +84,12 @@ global.bruhdash = {
     }
     //if n is 0, return whole array
     var endNum = array.length - n;
-    console.log(array[endNum]);
 
     return array.slice(0,endNum);
   },
 
   // creates a slice of an array with n elements taken from the beginning
   take: function (array, elements) {
-    console.log(arguments);
     if(elements == undefined) {
       elements = 1;
     }
@@ -99,7 +97,13 @@ global.bruhdash = {
   },
 
   // creates a slice of an array with n elements taken from the end
-  takeRight: function () {
+  takeRight: function (array,elements) {
+    console.log(arguments);
+    if(elements == undefined) {
+      elements = 1;
+    }
+    return array.slice(array.length - elements);
+
 
   },
 
