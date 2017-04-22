@@ -258,14 +258,37 @@ global.bruhdash = {
 
   // iterates over elements of a collection and returns all elements that the predicate returns truthy for
   // Note: this should work for arrays and objects
-  filter: function() {
-
+  filter: function(object,process) {
+    console.log(arguments);
+    if(Array.isArray(object)) {
+      return object.filter(process);
+    } else {
+      var obj = {};
+      for(var key in object) {
+        if(process(object[key])) {
+          obj[key] = object[key];
+        }
+        
+      }
+      console.log(obj);
+      return obj;
+    }
   },
 
   // Reduces the collection to a value which is the accumulated result of running each element
   // in the collection through an iteratee
   // Note: this should work for arrays and objects
-  reduce: function() {
-    
+  reduce: function(object,process) {
+    console.log(arguments);
+    if(Array.isArray(object)) {
+      return object.reduce(process);
+    } else {
+      var sum = 0;
+      for(var key in object) {
+        sum = process(sum, object[key]);
+      console.log(sum);
+      }
+      return sum;
+    }
   }
 };
