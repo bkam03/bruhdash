@@ -201,8 +201,26 @@ global.bruhdash = {
   },
 
   // creates an array of elements into groups of length of specified size
-  chunk: function(){
-
+  chunk: function(array,chunk){
+    var chunkCount = 0;
+    var mainArray = [];
+    var chunkArray = [];
+    if(array ===0 || chunk ===0) {
+      return mainArray;
+    }
+    for(var i=0;i<array.length;i++) {//cycle through array
+      chunkArray.push(array[i]);  //add element from array to smaller array
+      chunkCount++;   //increase count on smaller array
+      if(chunkCount >= chunk) {  //when small array reaches proper size
+        chunkCount = 0;  //reset small array count
+        mainArray.push(chunkArray); //add small array to large array
+        chunkArray = [];  //reset small array
+      }
+    }
+    if(chunkCount >0) { //if loop ends with remaining small array
+       mainArray.push(chunkArray); //add to main array
+    }
+    return mainArray;
   },
 
   // iterates over elements of a collection and invokes iteratee for each element
